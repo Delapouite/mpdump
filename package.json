@@ -1,0 +1,15 @@
+{
+  "name": "mpdump",
+  "version": "1.0.0",
+  "description": "Dump all the songs stored in a MPD database into a raw list that may be parsed to JSON",
+  "keywords": ["mpd"],
+  "author": "Delapouite <delapouite@gmail.com> (http://delapouite.com)",
+  "license": "MIT",
+  "dependencies": {
+    "camelcase": "^2.0.1"
+  },
+  "scripts": {
+    "dump": "node dump.js",
+    "parse": "node parse.js"
+  }
+}
