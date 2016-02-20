@@ -28,7 +28,11 @@ Simply edit the `dump.js` to tweak those values. Don't be scared, the script is 
 - execute `node parse.js`
 - it generates a `dump.json` file in the current directory
 - ???
-- PROFIT!
+- [PROFIT!](https://github.com/Delapouite/visic)
+
+### Bonus
+
+You can also run `npm run dump` and `npm run parse`
 
 ## License
 
