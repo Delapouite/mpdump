@@ -15,6 +15,7 @@ fs.readFile("dump.raw", "utf8", (err, content) => {
 
 function parse (content) {
     var song = null
+    var last = null
 
     var songs = getLines(content).reduce((acc, line) => {
         // TODO destructuring
@@ -22,12 +23,18 @@ function parse (content) {
         var key = entry[0]
         var value = entry[1]
 
+        if (key === "directory") {
+            last = key
+        }
+
         // song delimiter
         if (key === "file") {
+            last = key
             if (song) acc.push(song)
             song = { file: value }
+        } else if (last === "file") {
+            song[key] = value
         }
-        song[key] = value
         return acc
     }, [])
 
