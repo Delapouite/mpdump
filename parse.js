@@ -18,15 +18,11 @@ function parse (content) {
     var last = null
 
     var songs = getLines(content).reduce((acc, line) => {
-        // TODO destructuring
-        var entry = getEntry(line)
-        var key = entry[0]
-        var value = entry[1]
+        const [key, value] = getEntry(line)
 
         if (key === "directory") {
             last = key
         }
-
         // song delimiter
         if (key === "file") {
             last = key
@@ -52,7 +48,6 @@ function getLines (content) {
 }
 
 function getEntry (line) {
-    // TODO destructuring
     var s = line.split(":")
     return [camelCase(s[0]), s[1].trim()]
 }

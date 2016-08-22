@@ -4,7 +4,7 @@ Dump all the songs stored in a [MPD](http://www.musicpd.org) database into a raw
 
 ## Install
 
-The following tools are written in ECMAScript. You need [Node](https://nodejs.org) > 5 to run them.
+The following tools are written in ECMAScript. You need [Node](https://nodejs.org) > 6 to run them.
 
 Execute `npm i` to install the dependencies.
 
@@ -14,7 +14,7 @@ Execute `npm i` to install the dependencies.
 
 - MPD must be running
 - execute `node dump.js`
-- it generates a `dump.raw` file in the current directory
+- it generates a `dump.raw` file in the current directory by executing `listallinfo`
 - `CTRL+C` to kill the client when the dump is finished. (OK is written on the screen)
 
 #### Config
