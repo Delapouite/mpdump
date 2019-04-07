@@ -15,7 +15,7 @@ Execute `npm i` to install the dependencies.
 - MPD must be running
 - execute `node dump.js`
 - it generates a `dump.raw` file in the current directory by executing `listallinfo`
-- `CTRL+C` to kill the client when the dump is finished. (OK is written on the screen)
+- the dump is finished when the last line displays `OK`
 
 #### Config
 
