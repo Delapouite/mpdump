@@ -9,7 +9,7 @@ client.on("data", (data) => {
   const str = data.toString()
   console.log(str)
   if (str.endsWith('OK\n')) {
-    process.exit(0)
+    client.destroy()
   }
 })
 
