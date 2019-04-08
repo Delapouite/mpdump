@@ -20,6 +20,7 @@
   },
   "scripts": {
     "dump": "node dump.js",
-    "parse": "node parse.js"
+    "parse": "node parse.js",
+    "clean": "rm dump.raw && rm dump.json"
   }
 }
