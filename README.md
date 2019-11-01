@@ -14,7 +14,7 @@ Execute `npm i` to install the dependencies.
 
 - MPD must be running
 - execute `node dump.js`
-- it generates a `dump.raw` file in the current directory by executing `listallinfo`
+- it generates a `dump.raw` file in the current directory by executing [`listallinfo`](https://www.musicpd.org/doc/html/protocol.html#command-listallinfo)
 - the dump is finished when the last line displays `OK`
 
 #### Config
