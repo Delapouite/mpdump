@@ -16,7 +16,7 @@
   "homepage": "https://github.com/delapouite/mpdump",
   "license": "MIT",
   "dependencies": {
-    "camelcase": "^5.0.0"
+    "camelcase": "^6.3.0"
   },
   "scripts": {
     "dump": "node dump.js",
