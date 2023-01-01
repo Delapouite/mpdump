@@ -1,11 +1,11 @@
 {
   "name": "mpdump",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Dump all the songs stored in a MPD database into a raw list that may be parsed to JSON",
   "keywords": [
     "mpd"
   ],
-  "author": "Delapouite <delapouite@gmail.com> (http://delapouite.com)",
+  "author": "Delapouite <delapouite@gmail.com> (https://delapouite.com)",
   "repository": {
     "type": "git",
     "url": "https://github.com/delapouite/mpdump.git"
@@ -21,6 +21,7 @@
   "scripts": {
     "dump": "node dump.js",
     "parse": "node parse.js",
-    "clean": "rm dump.raw && rm dump.json"
+    "insert": "sqlite-utils insert --alter --nl dump.sqlite songs dump.jsonl",
+    "clean": "rm dump.raw && rm dump.json && rm dump.jsonl && rm dump.sqlite"
   }
 }
