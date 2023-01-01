@@ -24,6 +24,12 @@ fs.readFile("dump.raw", "utf8", (err, content) => {
 
     console.log(`dump.json created with ${parsed.songs.length} songs`)
   })
+
+  fs.writeFile("dump.jsonl", parsed.songs.map(s => JSON.stringify(s)).join("\n"), (err) => {
+    if (err) throw err
+
+    console.log(`dump.jsonl created with ${parsed.songs.length} songs`)
+  })
 })
 
 function parse (content) {
