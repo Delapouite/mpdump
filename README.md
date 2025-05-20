@@ -4,7 +4,7 @@ Dump all the songs stored in a [MPD](http://www.musicpd.org) database into a raw
 
 ## Install
 
-The following tools are written in ECMAScript. You need [Node](https://nodejs.org) > 6 to run them.
+The following tools are written in ECMAScript. You need [Node](https://nodejs.org) > 16 to run them.
 
 Execute `npm i` to install the camelcase dependency.
 

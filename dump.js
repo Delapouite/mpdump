@@ -1,5 +1,5 @@
-const fs = require("fs")
-const net = require("net")
+import fs from "node:fs"
+import net from "node:net"
 
 const fsStream = fs.createWriteStream("dump.raw")
 

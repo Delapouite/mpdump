@@ -1,5 +1,5 @@
-const fs = require("fs")
-const camelCase = require("camelcase")
+import fs from "node:fs/promises"
+import camelCase from "camelcase"
 
 const tags = [
   "file",
@@ -14,23 +14,14 @@ const tags = [
   "date",
 ]
 
-fs.readFile("dump.raw", "utf8", (err, content) => {
-  if (err) throw err
+const content = await fs.readFile("dump.raw", "utf8")
+const parsed = parse(content)
 
-  const parsed = parse(content)
+await fs.writeFile("dump.json", JSON.stringify(parsed, null, 2))
+console.log(`dump.json created with ${parsed.songs.length} songs`)
 
-  fs.writeFile("dump.json", JSON.stringify(parsed, null, 2), (err) => {
-    if (err) throw err
-
-    console.log(`dump.json created with ${parsed.songs.length} songs`)
-  })
-
-  fs.writeFile("dump.jsonl", parsed.songs.map(s => JSON.stringify(s)).join("\n"), (err) => {
-    if (err) throw err
-
-    console.log(`dump.jsonl created with ${parsed.songs.length} songs`)
-  })
-})
+await fs.writeFile("dump.jsonl", parsed.songs.map(s => JSON.stringify(s)).join("\n"))
+console.log(`dump.jsonl created with ${parsed.songs.length} songs`)
 
 function parse (content) {
   let song = null
